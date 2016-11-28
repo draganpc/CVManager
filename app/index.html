@@ -6,18 +6,24 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Core bootstrap -->
-  <link href="/external%20content/css/bootstrap.min.css" rel="stylesheet">
+  <link href="external_content/css/bootstrap.min.css" rel="stylesheet">
+  <link href="external_content/css/bootstrap.css" rel="stylesheet">
   <!-- Theme css -->
-  <link rel="stylesheet" href="external%20content/css/agency.min.css">
+ <link href="app.css" rel="stylesheet">
+  <link href="external_content/css/agency.min.css" rel="stylesheet">
+  <link href="external_content/css/agency.css" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src="external%20content/css/bootstrap.min.js"></script>
+  <script src="external_content/css/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="external_content/css/jquery.min.js"></script>
   <!-- Theme script -->
-  <script src="external%20content/css/agency.min.js"></script>
+  <script src="external_content/css/agency.js"></script>
+
 </head>
 <body ng-app="cvMan">
 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container" ng-controller="repoCtrl">
+    <div class="container">
        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -25,10 +31,10 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#!/reports">Reports</a>
+                    <a class="page-scroll" href="Reports/reports.html">Reports</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#!/employee">Employee</a>
+                    <a class="page-scroll" href="Employee/employee.html">Employee</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#!/upload">Upload</a>
@@ -45,33 +51,28 @@
 </nav>
 
 <!-- Header -->
-<!--<header>
+<header id="slikahedr">
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Studio!</div>
-            <div class="intro-heading">It's Nice To Meet You</div>
-            <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+            <div class="intro-lead-in"></div>
+            <div class="intro-heading">CV Manager</div>
+            <!--<a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>-->
         </div>
     </div>
-</header> -->
+</header>
 
 
 
 
 
 
- <!-- <ul class="menu">
-    <li><a href="#!/reports/">Reports</a></li>
-    <li><a href="#!/employee">Employee</a></li>
-  </ul> -->
 
-  <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+ <!-- <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div>Angular seed app: v<span app-version></span></div> -->
 
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8./angular.min.js"></script>
