@@ -1,14 +1,28 @@
-'use strict';
+var cvMan = angular.module('cvMan', ['ngRoute']);
 
-// Declare app level module which depends on views, and components
-angular.module('cvMan', [
-  'ngRoute',
-  'cvMan.Reports',
-  'cvMan.Employee',
-  'cvMan.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+cvMan.config(function($routeProvider) {
+    $routeProvider
 
-  $routeProvider.otherwise({redirectTo: '/Reports'});
-}]);
+        .when('/', {
+        templateUrl: 'index.html'
+    })
+
+        .when('/reports', {
+        templateUrl:'./app/reports/reports.html',
+        controller: 'reportsController'
+    })
+
+        .when('/employee', {
+            templateUrl:'./app/employee/employee.html',
+            controller: 'employeeController'
+        })
+
+        .when('/upload', {
+            templateUrl: './app/upload/upload.html',
+            controller: 'uploadController'
+        });
+});
+
+
+
+
