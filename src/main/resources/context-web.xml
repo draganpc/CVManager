@@ -10,5 +10,6 @@
    
 
 	<context:component-scan base-package="com.polarcape.cvmanager.controller"/>
+        <context:component-scan base-package="com.polarcape.cvmanager.service"/>
 
 </beans>

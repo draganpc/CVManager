@@ -1,30 +1,27 @@
 package com.polarcape.cvmanager.controller;
 
-
 import com.polarcape.cvmanager.model.Employee;
-import com.polarcape.cvmanager.service.BaseService;
-import com.polarcape.cvmanager.service.impl.BaseServiceImpl;
+import com.polarcape.cvmanager.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-
+import com.polarcape.cvmanager.service.EmployeeService;
 
 @RestController
 @RequestMapping(value = "/employee")
 public class EmployeeController {
-    
+
     @Autowired
-BaseService baseService;
-    
-    @RequestMapping(method = RequestMethod.GET, path = "/save")
+    private EmployeeService employeeService;
+
+    @RequestMapping(method = RequestMethod.GET, value = "/save")
     public Employee save() {
         Employee e = new Employee();
         e.setEmail("sdadsadas");
         e.setName("dsdasa");
-        
-        baseService.save(e);
+
+        employeeService.save(e);
         return e;
     }
 

@@ -4,7 +4,7 @@ import com.polarcape.cvmanager.model.*;
 import java.util.List;
 
 
-public interface BaseService {
+public interface EmployeeService {
 
         public Employee save(Employee entity);
 
