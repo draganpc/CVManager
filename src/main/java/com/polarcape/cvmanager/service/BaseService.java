@@ -1,17 +1,16 @@
 package com.polarcape.cvmanager.service;
 
-import com.polarcape.cvmanager.model.Employee;
+import com.polarcape.cvmanager.model.*;
 import java.util.List;
 
 
 public interface BaseService {
 
-	public Employee save(Employee entity);
+        public Employee save(Employee entity);
 
 	public boolean delete(Employee entity);
 
 	public List<Employee> findAll(Employee entity);	
 
-	public Employee edit(Employee entity);
-	
+	public Employee edit(Employee entity);	
 }

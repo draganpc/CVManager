@@ -1,6 +1,7 @@
 package com.polarcape.cvmanager.model;
 
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
@@ -8,6 +9,7 @@ import javax.persistence.MappedSuperclass;
 public abstract class DAOEntity implements Serializable {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     public Long getId() {
