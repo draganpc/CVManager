@@ -3,7 +3,11 @@
 
 </head>
 <body>
-{{message}}
+
+<div class="jumbotron" ng-controller = "uploadController">
+    <input type="file"  class="form-control" id="inputDefault"  file-model="myFile"/>
+    <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+</div>
 
 </body>
 </html>

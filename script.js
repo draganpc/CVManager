@@ -11,10 +11,6 @@ cvManager.config(function ($routeProvider) {
             templateUrl: 'pages/upload.html',
             controller: 'uploadController'
     })
-        .when('/reports', {
-            templateUrl: 'pages/reports.html',
-            controller: 'reportsController'
-        })
         .when ('/employee', {
         templateUrl:'pages/employee.html',
         controller: 'employeeController'
@@ -29,26 +25,56 @@ cvManager.config(function ($routeProvider) {
         });
 });
 
+
+
 cvManager.controller('homeController', function($scope) {
     $scope.message = 'I HOME RABOTI'
 });
 
-cvManager.controller('uploadController', function($scope){
-    $scope.message = 'UPLOAD page eve sfakas'
-});
+cvManager.controller('uploadController', ['$scope', 'fileUpload', function($scope, fileUpload){
+    $scope.uploadFile = function(){
+        var file = $scope.myFile;
 
-cvManager.controller('reportsController', function($scope) {
-    $scope.message = 'eve go da recime'
-});
+        console.log('file is ' );
+        console.dir(file);
+
+        //VNESI LEGIT URL
+        var uploadUrl = "/fileUpload";
+        fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+}]);
+
 
 cvManager.controller('mainController', function($scope){
     $scope.message = 'i ova raboti';
 });
 
 cvManager.controller('employeeController', function($scope) {
-    $scope.message = 'I EMPLOYEE RABOTIIIII'
+
+  $scope.newUser = {};
+  $scope.clickedUser = {};
+
+    $scope.users = [
+        {firstName: "Goce", lastName: "Delcev"},
+        {firstName: "Pitu", lastName: "Guli"},
+        {firstName: "Dame", lastName: "Gruev"}
+    ];
+
+  $scope.saveUser = function(){
+      $scope.users.push($scope.newUser);
+      $scope.newUser = {};
+  };
+
+  $scope.selectUser = function (user) {
+      $scope.clickedUser = user;
+  };
+
+  $scope.updateUser = function(){
+
+  };
+
+  $scope.deleteUser = function(){
+      $scope.users.splice($scope.users.indexOf($scope.clickedUser), 1);
+  };
 });
 
-cvManager.controller('smartsearchController', function($scope) {
-    $scope.message = 'I SMART SRCHO RABOTIII INSHALA'
-});
